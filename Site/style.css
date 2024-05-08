@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Aldrich';
+}
+
+:root{
+    --black: #000000;
+    --white: #FFFFFF;
+    --green-loud: #00FF3C;
+}
+
+body{
+    height: 3469px;
+    background-color: var(--black);
+}
+
+/* ----------------------NAVBAR------------------------- */
+
+header{
+    background-color: var(--black);
+    height: 115px;
+}
+
+.nav-bar{
+    height: 115px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-logo img{
+    width: 150px;
+}
+
+.nav-itens{
+    width: 40%;
+}
+
+.nav-itens ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.nav-itens a{
+    text-decoration: none;
+    color: var(--white);
+}
+
+.nav-login-cadastro{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 18%;
+}
+
+.nav-login-cadastro a{
+    color: var(--white);
+}
+
+.nav-login-cadastro button{
+    width: 133px;
+    height: 52px;
+    background-color: var(--black);
+    color: white;
+    border-radius: 20px;
+    border: solid 4px var(--green-loud);
+    cursor: pointer;
+}
+
+.nav-login-cadastro button:hover{
+    background-color: var(--white);
+    color: var(--black);
+    transition-duration: 0.5s;
+}
+
+/* --------------------------HOME-------------------------- */
+.home-background{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    background-image: linear-gradient(to bottom, rgba(251, 224, 192, 0.1), rgba(0, 0, 0, 0.8)), url('./imgs/equipe-loud.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    height: 130vh;
+    width: 100%;
+}
+
+.home-leagueLoud{
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(5px);
+    border-radius: 60px;
+    width: 70%;
+    height: 50%;
+}
+
+
+.home-leagueLoud p{
+    color: var(--white);
+    font-size: 64px;
+    text-shadow: 
+    -2px -2px 0 #000,  
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;
+}
+
+.home-img-loud{
+    width: 440px;
+}
+
+.home-leagueLoud button{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 24px;
+    margin-top: 40px;
+    width: 333px;
+    height: 100px;
+    border-radius: 60px;
+    color: var(--white);
+    background-color: var(--black);
+    border: solid 6px var(--green-loud);
+    cursor: pointer;
+
+}
+
+/* -------------------------------------LOUD NO LEAGUE---------------------------------- */
+.loud-no-league{
+    height: 100vh;
+    width: 100%;
+    color: var(--white);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.loud-no-league-txt{
+    width: 50%;
+}
+
+.loud-no-league-txt p{
+    font-size: 20px;
+}
+
+.loud-no-league-txt li{
+    font-size: 20px;
+}
+
+.loud-no-league-txt h1{
+    font-size: 48px;
+    font-weight: normal;
+    color: var(--green-loud);
+    text-align: center;
+}
+
+.loud-no-league img{
+    border: 5px solid #00FF3C;
+    border-radius: 60px;
+}
+
+/* ---------------------------EQUIPE ATUAL---------------------------- */
