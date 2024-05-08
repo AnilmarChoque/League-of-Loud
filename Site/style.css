@@ -10,9 +10,16 @@
     --green-loud: #00FF3C;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
-    height: 3469px;
     background-color: var(--black);
+}
+
+.space-nav{
+    height: 105px;
 }
 
 /* ----------------------NAVBAR------------------------- */
@@ -23,10 +30,14 @@ header{
 }
 
 .nav-bar{
+    background-color: var(--black);
+    position: fixed;
     height: 115px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    z-index: 2;
+    width: 100%;
 }
 
 .nav-logo img{
@@ -67,6 +78,7 @@ header{
     border-radius: 20px;
     border: solid 4px var(--green-loud);
     cursor: pointer;
+    transition-duration: 0.5s;
 }
 
 .nav-login-cadastro button:hover{
@@ -167,3 +179,218 @@ header{
 }
 
 /* ---------------------------EQUIPE ATUAL---------------------------- */
+
+.equipe-atual{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.equipe-titulo{
+    color: var(--green-loud);
+    font-weight: normal;
+    font-size: 40px;
+}
+
+.equipe-cards{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    width: 200px;
+    border-radius: 20px;
+    height: 486px;
+    transition-duration: 1s;
+}
+
+.robo{
+    background-image: url(./imgs/Robo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.tin{
+    background-image: url(./imgs/Tinowns.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.croc{
+    background-image: url(./imgs/Croc.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.route{
+    background-image: url(./imgs/Route.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.redbert{
+    background-image: url(./imgs/redbert.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.card:hover{
+    width: 380px;
+    transition-duration: 0.8s;
+    .card-text{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .card-text-croc{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+.equipe-cards:hover > :not(:hover){
+    width: 170px;
+    transition-duration: 0.8s;
+}
+
+.card-text{
+    display: none;
+    margin-bottom: 22px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    width: 340px;
+    height: 122px;
+    transition-duration: 1s;
+    color: var(--white);
+    text-wrap: nowrap;
+}
+
+.card-text-croc{
+    display: none;
+    margin-bottom: 22px;
+    background: rgba(0, 0, 0, 0.31);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    width: 340px;
+    height: 122px;
+    transition-duration: 1s;
+    color: var(--white);
+    text-wrap: nowrap;
+}
+
+
+.card-text h1{
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.card-text span{
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+.card-text li{
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.card-text-croc h1{
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.card-text-croc span{
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+.card-text-croc li{
+    font-size: 14px;
+    font-weight: normal;
+}
+
+/* -----------------------------------CARTINHAS--------------------------- */
+
+.cartinhas-page{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.cartinhas-txt{
+    width: 50%;
+}
+
+.cartinha-img img{
+    height: 507px;
+}
+
+.cartinha-txt-sobre h1{
+    color: var(--green-loud);
+    font-weight: normal;
+    font-size: 48px;
+    width: 100%;
+    text-align: center;
+}
+
+.cartinha-txt-sobre p, .cartinha-txt-sobre li{
+    color: var(--white);
+    font-size: 20px;
+}
+
+.cartinha-cadastro-login{
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+}
+
+.cartinha-cadastro-login button{
+    width: 217px;
+    height: 52px;
+    font-size: 16px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: solid 4px var(--green-loud);
+    background-color: var(--black);
+    color: var(--white);
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+.cartinha-cadastro-login button:hover{
+    background-color: var(--white);
+    color: var(--black);
+    transition-duration: 0.5s;
+}
+
+.cartinha-cadastro-login a{
+    color: var(--white);
+    font-size: 16px;
+}
+
+/* ------------------------------FOOTER---------------------------- */
+footer{
+    height: 305px;
+    width: 100%;
+    margin-top: 100px;
+    background: linear-gradient(0deg, #F5F5F5 83.03%, #000000 100%);
+}
