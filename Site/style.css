@@ -30,7 +30,7 @@ header{
 }
 
 .nav-bar{
-    background-color: var(--black);
+
     position: fixed;
     height: 115px;
     display: flex;
@@ -38,6 +38,15 @@ header{
     align-items: center;
     z-index: 2;
     width: 100%;
+}
+
+.nav-bar.blur{
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.nav-bar.black{
+    background-color: var(--black);
 }
 
 .nav-logo img{
@@ -190,6 +199,7 @@ header{
     color: var(--green-loud);
     font-weight: normal;
     font-size: 40px;
+    margin-bottom: 20px;
 }
 
 .equipe-cards{
@@ -359,6 +369,7 @@ header{
     display: flex;
     width: 70%;
     justify-content: space-between;
+    align-items: center;
 }
 
 .cartinha-cadastro-login button{
@@ -382,6 +393,10 @@ header{
     transition-duration: 0.5s;
 }
 
+.cartinha-cadastro-login p{
+    color: var(--white);
+}
+
 .cartinha-cadastro-login a{
     color: var(--white);
     font-size: 16px;
@@ -393,4 +408,44 @@ footer{
     width: 100%;
     margin-top: 100px;
     background: linear-gradient(0deg, #F5F5F5 83.03%, #000000 100%);
+    
+}
+
+.footer-principal{
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 4%;
+    margin: 0 144px 0 88px;
+}
+
+.footer-redes{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 319px;
+    height: 118px;
+}
+
+.footer-redes h1{
+    font-weight: normal;
+    font-size: 24px;
+}
+
+.footer-icones{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer-logo img{
+    width: 300px;
+}
+
+.footer-legal{
+    margin-bottom: 150px;
+    margin-left: 40px;
 }

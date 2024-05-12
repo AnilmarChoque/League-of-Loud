@@ -1,0 +1,319 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Aldrich';
+}
+
+:root{
+    --black: #000000;
+    --white: #FFFFFF;
+    --green-loud: #00FF3C;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.space-nav{
+    height: 105px;
+}
+
+/* -----------------------------------------NAV BAR-------------------------------------------- */
+header{
+    height: 20%;
+}
+
+.nav-bar{
+    position: fixed;
+    height: 115px;
+    display: flex;
+    align-items: center;
+    background-color: var(--black);
+    width: 100%;
+    z-index: 2;
+}
+
+.nav-bar img{
+    margin-left: 62px;
+    width: 144px;
+}
+
+/* ----------------------------------MAIN---------------------------- */
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    z-index: 1;
+}
+
+.cadastre-se{
+    width: 701px;
+    height: 400px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: flex;
+}
+
+.fundo-loud{
+    width: 50%;
+    height: 100%;
+    background-image: url(./imgs/Logo.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50%;
+    border-radius: 50px;
+}
+
+.cadastro-inputs{
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: transform 0.5s ease;
+}
+
+.cadastro-inputs h1{
+    font-weight: normal;
+    font-size: 24px;
+}
+
+.inputs-padrao{
+    display: flex;
+    position: relative;
+    
+    padding-top: 13px;
+} 
+
+.inputs-padrao input{
+    margin-left: 10px;
+    border-bottom: 2px solid var(--white);
+    border-top: none;
+    border-left: none;
+    width: 200px;
+    border-right: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 12px;
+    transition: all .1s linear;
+    color: var(--white);
+    text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.inputs-padrao input:focus {
+    border: 2px solid var(--white);
+    border-radius: 5px;
+}
+  
+.inputs-padrao input::placeholder {
+    color: transparent;
+}
+
+.inputs-padrao label{
+    margin-left: 10px;
+    pointer-events: none;
+    position: absolute;
+    top: calc(50% - 8px);
+    left: 15px;
+    transition: all .1s linear;
+    background-color: transparent;
+    color: var(--white);
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.inputs-padrao input:focus+label,
+.inputs-padrao input:not(:placeholder-shown)+label {
+  font-size: 13px;
+  top: -5px;
+}
+
+.inputs-padrao img{
+    width: 20px;
+}
+
+.botao-padrao button{
+    width: 184px;
+    height: 45px;
+    background-color: transparent;
+    color: var(--white);
+    border: solid 4px var(--green-loud);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.botao-padrao button:hover{
+    background-color: var(--white);
+    color: var(--black);
+    transition: all 0.5s;
+}
+
+.fundo-lol{
+    width: 50%;
+    height: 100%;
+    background-image: url(./imgs/LoL-Symbol\ 1.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 80%;
+    border-radius: 50px;
+}
+
+.cadastro-texto{
+    background-color: var(--green-loud);
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: transform 0.5s ease;
+}
+
+.cadastro-texto h1{
+    color: var(--black);
+    font-weight: normal;
+    text-align: center;
+    font-size: 24px;
+}
+
+.cadastro-texto p{
+    text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+    width: 70%;
+    text-align: center;
+}
+
+.cadastro-texto button{
+    cursor: pointer;
+    font-size: 16px;
+    width: 120px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: transparent;
+    border: solid 4px var(--black);
+    border-radius: 20px;
+    transition: all 0.5s;
+}
+
+.cadastro-texto button:hover{
+    background-color: var(--white);
+    color: var(--black);
+    transition: all 0.5s;
+}
+
+.cadastro-texto img{
+    width: 30px;
+}
+
+/* -----------------------------LOGIN-------------------- */
+
+.login-inputs{
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: transform 0.5s ease;
+}
+
+.login-inputs h1{
+    font-weight: normal;
+    font-size: 24px;
+}
+
+.login-texto{
+    background-color: var(--green-loud);
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: transform 0.5s ease;
+}
+
+.login-texto h1{
+    color: var(--black);
+    font-weight: normal;
+    text-align: center;
+    font-size: 24px;
+}
+
+.login-texto p{
+    text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+    width: 70%;
+    text-align: center;
+}
+
+.login-texto button{
+    cursor: pointer;
+    font-size: 16px;
+    width: 200px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: transparent;
+    border: solid 4px var(--black);
+    border-radius: 20px;
+    transition: all 0.5s;
+}
+
+.login-texto button:hover{
+    background-color: var(--white);
+    color: var(--black);
+    transition: all 0.5s;
+}
+
+.login-texto img{
+    width: 30px;
+}
+
+.slide-left {
+    transform: translateX(-100%);
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.slide-right {
+    transform: translateX(100%);
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}

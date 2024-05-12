@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./imgs/icon.png" type="image/x-icon">
     <title>League of Loud</title>
 </head>
 <body>
@@ -24,8 +25,8 @@
                 </ul>
             </div>
             <div class="nav-login-cadastro">
-                <a href="">LOGIN</a>
-                <button>CADASTRE-SE</button>
+                <a href="./login.html">LOGIN</a>
+                <button onclick="telaCadastro()">CADASTRE-SE</button>
             </div>
         </nav>
     </header>
@@ -172,8 +173,9 @@
                     <br>
                 </div>
                 <div class="cartinha-cadastro-login">
-                    <button>Realizar Cadastro <img src="./imgs/seta.png" alt=">"></button>
-                    <a href="">Realizar Login</a>
+                    <button onclick="telaCadastro()">Realizar Cadastro <img src="./imgs/seta.png" alt=">"></button>
+                    <p>OU</p>
+                    <a href="./login.html">Realizar Login</a>
                 </div>
             </div>
             <div class="cartinha-img">
@@ -183,19 +185,40 @@
     </main>
     
     <footer>
-        <div>
-            <img src="" alt="">
+        <div class="footer-principal">
+            <div class="footer-logo">
+                <img src="./imgs/logotipo.png" alt="">
+            </div>
+            <div class="footer-redes">
+                <h1>REDES SOCIAIS</h1>
+                <div class="footer-icones">
+                    <a href=""><img src="./imgs/instagram-logo.png" alt="INSTAGRAM"></a>
+                    <a href=""><img src="./imgs/youtube-logo.png" alt="YOUTUBE"></a>
+                    <a href=""><img src="./imgs/Twitter-X-Logo.png" alt="X"></a>
+                </div>
+            </div>
         </div>
-
-        <div>
-            <h1>REDES SOCIAIS</h1>
-            <div>
-                <h2>LOUD</h2>
-            </div>
-            <div>
-                <h2>JOGADORES</h2>
-            </div>
+        <div class="footer-legal">
+            <p>© 2024, League of Loud. Todos os direitos reservados.</p>
         </div>
     </footer>
 </body>
 </html>
+
+<script>
+    window.addEventListener('scroll', function() {
+    var navbar = document.querySelector('.nav-bar');
+    var scrolled = window.scrollY;
+    if (scrolled === 0) {
+      navbar.classList.add('black');
+      navbar.classList.remove('blur');  
+    } else {
+      navbar.classList.add('blur');
+      navbar.classList.remove('black');
+    }
+  });
+
+  function telaCadastro(){
+    window.location.href = "./cadastro.html"
+  }
+</script>
