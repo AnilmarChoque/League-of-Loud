@@ -1,6 +1,6 @@
-CREATE DATABASE LeagueOfLoud;
+CREATE DATABASE leagueofloud;
 
-USE LeagueOfLoud;
+USE leagueofloud;
 
 CREATE TABLE usuario (
 	idUsuario INT PRIMARY KEY AUTO_INCREMENT,
@@ -19,5 +19,14 @@ CREATE TABLE equipe (
 CREATE TABLE jogador (
 	idJogador INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(45),
-    rota VARCHAR(10)
+    rota VARCHAR(10),
+    fkEquipe INT,
+    FOREIGN KEY(fkEquipe) REFERENCES equipe(idEquipe)
+);
+
+CREATE TABLE campeonato (
+	idCampeonato INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(45),
+    dataInicio DATETIME,
+   campeao
 );
