@@ -9,6 +9,9 @@ CREATE TABLE usuario (
     senha VARCHAR(45)
 );
 
+select * from usuario;
+SELECT idUsuario, nome, email, senha FROM usuario WHERE email = 'anilmar@gmail.com' AND senha = 'F4m1l145!';
+
 CREATE TABLE equipe (
 	idEquipe INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(45),
@@ -28,5 +31,5 @@ CREATE TABLE campeonato (
 	idCampeonato INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(45),
     dataInicio DATETIME,
-   campeao
+   campeao VARCHAR(45)
 );

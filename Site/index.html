@@ -8,6 +8,8 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
         <link rel="shortcut icon" href="./imgs/icon.png" type="image/x-icon">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <title>League of Loud</title>
     </head>
     <body>
@@ -24,9 +26,8 @@
                         <li><a href="#cartinhas">CARTINHAS</a></li>
                     </ul>
                 </div>
-                <div class="nav-login-cadastro">
-                    <a href="./login.html">LOGIN</a>
-                    <button onclick="telaCadastro()">CADASTRE-SE</button>
+                <div id="sessoes" class="perfil">
+                    <button class="buttonPerfil" onclick="exibirMenu()"><img src="./imgs/user icon.png" alt=""></button>
                 </div>
             </nav>
         </header>
@@ -44,10 +45,10 @@
             </section>
 
             <section class="loud-no-league">
-                <div>
+                <div data-aos="fade-down">
                     <img src="./imgs/loudNoLeague.png" alt="LOUD NO LEAGUE">
                 </div>
-                <div class="loud-no-league-txt">
+                <div class="loud-no-league-txt" data-aos="fade-down">
                     <h1>LOUD NO LEAGUE</h1>
                     <br>
                     <br>
@@ -172,10 +173,11 @@
                         <br>
                         <br>
                     </div>
-                    <div class="cartinha-cadastro-login">
-                        <button onclick="telaCadastro()">Realizar Cadastro <img src="./imgs/seta.png" alt=">"></button>
+                    <div id="myCartinhas" class="cartinha-cadastro-login">
+                        <!-- <button onclick="telaCadastro()">Realizar Cadastro <img src="./imgs/seta.png" alt=">"></button>
                         <p>OU</p>
-                        <a href="./login.html">Realizar Login</a>
+                        <a href="./login.html">Realizar Login</a> -->
+                        <button>Ver suas Cartinhas<img src="./imgs/seta.png" alt=">"></button>
                     </div>
                 </div>
                 <div class="cartinha-img">
@@ -221,4 +223,24 @@
     function telaCadastro(){
         window.location.href = "./cadastro.html"
     }
-    </script>
+
+    function exibirMenu(){
+        var sessoes = document.getElementById("sessoes");
+        sessoes.innerHTML = `<div class="menu" data-aos="zoom-in">
+                        <button class="buttonUsuario" onclick="fecharMenu()"><img src="./imgs/user icon.png" alt=""></button>
+                        <p>nome do usuário</p>
+                        <a href="">Meu Perfil</a>
+                        <a href="">Minhas Cartinhas</a>
+                        <button class="buttonSair">Sair</button>
+                    </div>  `
+    }
+
+    function fecharMenu(){
+        var sessoes = document.getElementById("sessoes");
+        sessoes.innerHTML = `<button class="buttonPerfil" onclick="exibirMenu()" data-aos="zoom-out"><img src="./imgs/user icon.png" alt=""></button>`
+    }
+</script>
+
+<script>
+    AOS.init();
+</script>
