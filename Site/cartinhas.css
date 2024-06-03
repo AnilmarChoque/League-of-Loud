@@ -1,0 +1,352 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Aldrich';
+}
+
+:root{
+    --black: #000000;
+    --white: #F5F5F5;
+    --green-loud: #00FF3C;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--black);
+    color: var(--white);
+}
+
+/* -----------------------------------------NAV BAR-------------------------------------------- */
+header{
+    height: 115px;
+}
+
+.nav-bar{
+    height: 115px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 62px;
+    background-color: var(--black);
+    width: calc(100% - 124px);
+    z-index: 2;
+}
+
+.logo{
+    width: 144px;
+}
+
+.buttonPerfil{
+    width: 66px;
+    height: 66px;
+    background-color: var(--black);
+    border-radius: 50%;
+    border: solid 4px var(--green-loud);
+    cursor: pointer;
+}
+
+.perfil img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.menu{
+    width: 174px;
+    height: 218px;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    color: var(--white);
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    border: solid 5px var(--green-loud);
+    padding: 10px;
+}
+.menu img{
+    width: 30px;
+    height: 30px;
+}
+
+.menu a{
+    color: var(--white);
+    text-decoration: none;
+}
+
+.menu p{
+    text-decoration: underline;
+}
+
+.buttonUsuario{
+    width: 100%;
+    height: 50px;
+    background-color: var(--black);
+    border: none;
+    cursor: pointer;
+}
+
+.buttonUsuario img{
+    width: 60px;
+    height: 60px;
+}
+
+.buttonSair{
+    background-color: transparent;
+    color: white;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+}
+
+/* ----------------------------------MAIN---------------------------- */
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    z-index: 1;
+}
+
+/* ----------------------------------CARTINHAS---------------------------- */
+.cartinhas-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--white);
+    width: 80%;
+    height: 80%;
+    border-radius: 20px;
+}
+
+.cartinhas-main p{
+    color: var(--black);
+    font-size: 32px;
+    margin: 20px 0;
+}
+
+.partidas-informacoes{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+}
+
+
+/* ----------------------------------PARTIDAS---------------------------- */
+
+.partidas-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--green-loud);
+    width: 26%;
+    height: 80%;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+.partida{
+    background-color: #808080;
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+    color: var(--white);
+    margin: 10px 0;
+}
+
+.partida, .partida label, .partida img{
+    cursor: pointer;
+}
+
+.partidas-container p{
+    font-size: 24px;
+    padding: 20px 0;
+}
+
+.partida label{
+    font-size: 15px;
+}
+
+.partida div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partida img{
+    width: 40px;
+    margin: 0 3px;
+}
+
+.partidas-container::-webkit-scrollbar {
+    width: 10px;
+}
+  
+.partidas-container::-webkit-scrollbar-track {
+    background: #00EE38;
+    border-radius: 20px;
+}
+  
+.partidas-container::-webkit-scrollbar-thumb {
+    background-color: #00AB28;
+    border-radius: 50px;
+}
+
+.partida-escolhida{
+    background-color: var(--black);
+}
+
+/* ----------------------------------INFORMAÇÕES---------------------------- */
+
+.informacoes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 68%;
+    height: 80%;    
+}
+
+.carrossel-main{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.carousel {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--white);
+    height: 100%;
+}
+
+.carousel-container {
+    display: flex;
+    width: 600px;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    color: var(--black);
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.prev, .next {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prev img, .next img{
+    width: 40px;
+}
+
+.carousel-dots {
+    display: flex;
+    width: 150px;
+    justify-content: space-between;
+}
+
+.carousel-dots .dot {
+    width: 20px;
+    height: 20px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.carousel-dots .dot.active {
+    background-color: #717171;
+}
+
+.jogador{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.jogador img{
+    width: 90%;
+    border-radius: 10px;
+}
+
+.jogador label{
+    font-size: 16px;
+    text-align: center;
+}
+
+.infos-perguntas{
+    width: 50%;
+}
+
+.infos{
+    display: flex;
+    align-items: center;
+}
+
+.infos img{
+    width: 30%;
+    border-radius: 10px;
+    margin-right: 40px;
+}
+
+.infos p{
+    font-size: 20px;
+}
+
+.perguntas{
+    display: flex;
+    flex-direction: column;
+}
+
+.perguntas label{
+    font-size: 16px;
+}
+
+.perguntas input{
+    width: 80%;
+    height: 25px;
+    border: solid 1px var(--black);
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+.perguntas button{
+    margin-top: 10px;
+    width: 150px;
+    background-color: var(--black);
+    border: solid 4px var(--green-loud);
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.perguntas button:hover{
+    background-color: #FFFFFF;
+    color: var(--black);
+    transition: all 0.5s;
+}
