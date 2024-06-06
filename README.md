@@ -5,6 +5,7 @@ Esse projeto tem como objeto apresentar sobre a equipe brasileira chamada "LOUD"
 ## Links
 [Protótipo - Figma](https://www.figma.com/file/gXUpzvgO2l0brOIedToKmc/League-of-Loud?type=design&node-id=0%3A3&mode=design&t=ioMEDqXkFGpY8G32-1)
 
+[Documentação](https://bandteccom-my.sharepoint.com/:w:/g/personal/anilmar_orellana_sptech_school/EcSYD6RRVrlNkLOD0Be-AgUBiM1hDH-XLeiP-pof9MYBYA?e=4s4PGN)
 ## Pastas
 "Banco de Dados" - Nessa pasta temos uma modelagem de dados feita na IDE Workbench e um script com a criação das tabelas usando MySql.
 

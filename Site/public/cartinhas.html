@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/cartinhas.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="shortcut icon" href="./imgs/icon.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>League of Loud | Cartinhas</title>
+</head>
+<body onload="validarSessao()">
+    <header>    
+        <nav class="nav-bar">
+            <div>
+                <a href="./index.html"><img class="logo" src="./imgs/logotipo.png" alt="LOUD"></a>
+            </div>
+            <div id="sessoes" class="perfil">
+                <button class="buttonPerfil" onclick="exibirMenu()"><img src="./imgs/user icon.png" alt=""></button>
+            </div>
+        </nav>
+        
+    </header>
+    <main>
+        <section class="cartinhas-main">
+            <p>Cartinhas</p>
+            <div class="partidas-informacoes">
+                <div id="partidas" class="partidas-container">
+                    
+                </div>
+                <div class="informacoes" id="informacoes">
+                    <div class="carrossel-main">
+                        <button class="anterior" onclick="moverCarrossel(-1)"><img src="./imgs/seta preta reversa.png" alt=""></button>
+                        <div class="carrossel">        
+                            <div class="carrossel-container">
+                                
+                                <div class="carrossel-item">
+                                    <div class="jogador">
+                                        <img src="./imgs/Robo-carrossel.jpg" alt="Robo">
+                                        <label>Leonardo “Robo” Souza</label>
+                                        <label>TOP LANER</label>
+                                    </div>
+                                    <div class="infos-perguntas">
+                                        <div class="infos" id="robo">
+                                        </div>
+                                        <div class="perguntas">
+                                            <label>Movimentação no mapa</label>
+                                            <input type="text" placeholder="0 - 100" id="input_pergunta1Robo">
+                                            <label>Performasse com o time</label>
+                                            <input type="text" placeholder="0 - 100" id="input_pergunta2Robo">
+                                            <label>Controle da Rota</label>
+                                            <input type="text" placeholder="0 - 100" id="input_pergunta3Robo">
+                                            <button onclick="exibirCartinha('Robo')">Calcular Média</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="carrossel-item">
+                                    <div class="jogador">
+                                        <img src="./imgs/Croc-carrossel.jpg" alt="Croc">
+                                        <label>Park “Croc” Jong-hoon</label>
+                                        <label>JUNGLER</label>
+                                    </div>
+                                    <div class="infos-perguntas">
+                                        <div class="infos" id="croc">
+                                            
+                                        </div>
+                                        <div class="perguntas">
+                                            <label>Movimentação no mapa</label>
+                                            <input type="text" placeholder="0 - 100" id="input_pergunta1Croc">
+                                            <label>Performasse com o time</label>
+                                            <input type="text" placeholder="0 - 100" id="input_pergunta2Croc">
+                                            <label>Preparo para os objetivos</label>
+                                            <input type="text" placeholder="0 - 100" id="input_pergunta3Croc">
+                                            <button onclick="exibirCartinha('Croc')">Calcular Média</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="carrossel-item">
+                                    <div class="jogador">
+                                        <img src="./imgs/tinowns-carrossel.jpg" alt="">
+                                        <label>Thiago “Tinowns” Sartori</label>
+                                        <label>MID LANER</label>
+                                    </div>
+                                    <div class="infos-perguntas">
+                                        <div class="infos" id="tin">
+                                            
+                                        </div>
+                                        <div class="perguntas">
+                                            <label>Movimentação no mapa</label>
+                                            <input type="text" placeholder="0 - 100" id="input_pergunta1Tin">
+                                            <label>Performasse com o time</label>
+                                            <input type="text" placeholder="0 - 100" id="input_pergunta2Tin">
+                                            <label>Controle da Rota</label>
+                                            <input type="text" placeholder="0 - 100" id="input_pergunta3Tin">
+                                            <button onclick="exibirCartinha('Tin')">Calcular Média</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="carrossel-item">
+                                    <div class="jogador">
+                                        <img src="./imgs/route-carrossel.jpg" alt="">
+                                        <label>Moon “Route” Geom-su</label>
+                                        <label>ADCARRY</label>
+                                    </div>
+                                    <div class="infos-perguntas">
+                                        <div class="infos" id="route">
+                                            
+                                        </div>
+                                        <div class="perguntas">
+                                            <label>Movimentação no mapa</label>
+                                            <input type="text" placeholder="0 - 100" id="input_pergunta1Route">
+                                            <label>Performasse com o time</label>
+                                            <input type="text" placeholder="0 - 100" id="input_pergunta2Route">
+                                            <label>Controle de Wave</label>
+                                            <input type="text" placeholder="0 - 100" id="input_pergunta3Route">
+                                            <button onclick="exibirCartinha('Route')">Calcular Média</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="carrossel-item">
+                                    <div class="jogador">
+                                        <img src="./imgs/RedBert-carrossel.jpg" alt="">
+                                        <label>Ygor “RedBert” Freitas</label>
+                                        <label>SUPORTE</label>
+                                    </div>
+                                    <div class="infos-perguntas">
+                                        <div class="infos" id="redBert">
+                                            
+                                        </div>
+                                        <div class="perguntas">
+                                            <label>Movimentação no mapa</label>
+                                            <input type="text" placeholder="0 - 100" id="input_pergunta1RedBert">
+                                            <label>Performasse com o time</label>
+                                            <input type="text" placeholder="0 - 100" id="input_pergunta2RedBert">
+                                            <label>Controle de Wards</label>
+                                            <input type="text" placeholder="0 - 100" id="input_pergunta3RedBert">
+                                            <button onclick="exibirCartinha('RedBert')">Calcular Média</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <button class="proximo" onclick="moverCarrossel(1)"><img src="./imgs/seta preta.png" alt=""></button>
+                    </div>
+                    <div class="carrossel-bolinhas">
+                        <span class="bolinha ativado" onclick="irPara(0)"></span>
+                        <span class="bolinha" onclick="irPara(1)"></span>
+                        <span class="bolinha" onclick="irPara(2)"></span>
+                        <span class="bolinha" onclick="irPara(3)"></span>
+                        <span class="bolinha" onclick="irPara(4)"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cartinhas-section" id="cartinhas_section">
+            
+        </section>
+    </main>
+</body>
+</html>
+
+<script>
+    let paginaAtual = 0;
+
+    function moverCarrossel(direcao) {
+        const totalItems = document.querySelectorAll('.carrossel-item').length;
+
+        paginaAtual += direcao;
+
+        if (paginaAtual < 0) {
+            paginaAtual = totalItems - 1;
+        } else if (paginaAtual >= totalItems) {
+            paginaAtual = 0;
+        }
+
+        atualizarCarrossel();
+    }
+
+    function irPara(pagina) {
+        paginaAtual = pagina;
+        atualizarCarrossel();
+    }
+
+    function atualizarCarrossel() {
+        const carrosselContainer = document.querySelector('.carrossel-container');
+        const itemWidth = document.querySelector('.carrossel-item').offsetWidth;
+        carrosselContainer.style.transform = `translateX(${-paginaAtual * itemWidth}px)`;
+
+        const bolinha = document.querySelectorAll('.bolinha');
+        bolinha.forEach((bolinha, atual) => {
+            if (atual === paginaAtual) {
+                bolinha.classList.add('ativado');
+            } else {
+                bolinha.classList.remove('ativado');
+            }
+        });
+    }
+
+    function validarSessao() {
+        var email = sessionStorage.EMAIL_USUARIO;
+        var nome = sessionStorage.NOME_USUARIO;
+        var foto = sessionStorage.FOTO;
+        var sessoes = document.getElementById("sessoes");
+
+        if (email != null && nome != null) {   
+            sessoes.innerHTML = `<button class="buttonPerfil" onclick="exibirMenu()"><img src="${foto}" alt=""></button>`
+            informacoes.style.display = "none"
+            fetch("/partidas/listar").then(function (resposta) {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                        var partidas = document.getElementById("partidas");
+                        partidas.innerHTML = `<p>Partidas</p>`;
+                        for (let i = 0; i < resposta.length; i++) {
+                            var partida = resposta[i];
+                            partidas.innerHTML += `<button class="partida" onclick="escolherPartida(this, ${partida.idEquipe})">
+                            <label>${i + 1}ª Rodada</label>
+                            <div>
+                                <img src="${partida.logoEquipeAzul}" alt="">
+                                <label>${partida.placar}</label>
+                                <img src="${partida.logoEquipeVermelha}" alt="">
+                            </div>
+                            </button>`
+                        }
+
+                    });
+                } else {
+                    throw ('Houve um erro na API!');
+                }
+            }).catch(function (resposta) {
+                console.error(resposta);
+            });  
+        }
+    }
+
+    function escolherPartida(escolhido, idEquipe) {
+        informacoes.style.display = 'flex'
+        const partidas = document.querySelectorAll('.partida');
+        for (let i = 0; i < partidas.length; i++) {
+            partidas[i].classList.remove('partida-escolhida');
+        }
+        escolhido.classList.add('partida-escolhida');
+        fetch(`/performasses/listar/${idEquipe}`).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (response) {
+                    console.log("Dados recebidos: ", JSON.stringify(response));
+
+                    var robo = document.getElementById("robo");
+                    var croc = document.getElementById("croc");
+                    var tin = document.getElementById("tin");
+                    var route = document.getElementById("route");
+                    var redBert = document.getElementById("redBert");
+                    
+                    for (let i = 0; i < response.length; i++) {
+                        var performasse = response[i];
+                        if(i == 0){
+                            robo.innerHTML = `<img src="${performasse.campeaoUsado}" alt="">
+                                            <div>
+                                                <p>AMA: ${performasse.AMA}</p>
+                                                <p>Dano: ${performasse.dano}</p>
+                                                <p>Farm: ${performasse.farm}</p>
+                                                <p>Ward ${performasse.ward}</p>
+                                            </div>`
+                        }
+                        else if(i == 1){
+                            croc.innerHTML = `<img src="${performasse.campeaoUsado}" alt="">
+                                            <div>
+                                                <p>AMA: ${performasse.AMA}</p>
+                                                <p>Dano: ${performasse.dano}</p>
+                                                <p>Farm: ${performasse.farm}</p>
+                                                <p>Ward ${performasse.ward}</p>
+                                            </div>`
+                        }
+                        else if(i == 2){
+                            tin.innerHTML = `<img src="${performasse.campeaoUsado}" alt="">
+                                            <div>
+                                                <p>AMA: ${performasse.AMA}</p>
+                                                <p>Dano: ${performasse.dano}</p>
+                                                <p>Farm: ${performasse.farm}</p>
+                                                <p>Ward ${performasse.ward}</p>
+                                            </div>`
+                        }
+                        else if(i == 3){
+                            route.innerHTML = `<img src="${performasse.campeaoUsado}" alt="">
+                                            <div>
+                                                <p>AMA: ${performasse.AMA}</p>
+                                                <p>Dano: ${performasse.dano}</p>
+                                                <p>Farm: ${performasse.farm}</p>
+                                                <p>Ward ${performasse.ward}</p>
+                                            </div>`
+                        }
+                        else if(i == 4){
+                            redBert.innerHTML = `<img src="${performasse.campeaoUsado}" alt="">
+                                            <div>
+                                                <p>AMA: ${performasse.AMA}</p>
+                                                <p>Dano: ${performasse.dano}</p>
+                                                <p>Farm: ${performasse.farm}</p>
+                                                <p>Ward ${performasse.ward}</p>
+                                            </div>`
+                        }
+                    }
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+        .catch(function (error) {
+            console.error(`Erro na obtenção dos dados: ${error.message}`);
+        });
+    }
+
+    
+
+    function exibirMenu(){
+        var nome = sessionStorage.NOME_USUARIO;
+        var foto = sessionStorage.FOTO;
+        var sessoes = document.getElementById("sessoes");
+        sessoes.innerHTML = `<div class="menu" data-aos="zoom-in">
+                        <button class="buttonUsuario" onclick="fecharMenu()"><img src="${foto}" alt=""></button>
+                        <p>${nome}</p>
+                        <a href="./perfil.html">Meu Perfil</a>
+                        <a href="./cartinhas.html">Minhas Cartinhas</a>
+                        <button onclick="limparSessao()" class="buttonSair">Sair</button>
+                    </div>  `
+    }
+
+    function fecharMenu(){
+        var foto = sessionStorage.FOTO;
+        var sessoes = document.getElementById("sessoes");
+        sessoes.innerHTML = `<button class="buttonPerfil" onclick="exibirMenu()" data-aos="zoom-out"><img src="${foto}" alt=""></button>`
+    }
+
+    function exibirCartinha(nome){
+        const cartinhasSection = document.getElementById('cartinhas_section');
+        const pergunta1 = document.getElementById(`input_pergunta1${nome}`).value;
+        const pergunta2 = document.getElementById(`input_pergunta2${nome}`).value;
+        const pergunta3 = document.getElementById(`input_pergunta3${nome}`).value;
+        var fkJogador = 0
+
+        if(pergunta1 != '' || pergunta2 != '' || pergunta3 != ''){
+            var media = ((Number(pergunta1) + Number(pergunta2) + Number(pergunta3)) / 3).toFixed();
+            if(nome == 'Robo'){
+                fkJogador = 1;
+            }
+            else if(nome == 'Croc'){
+                fkJogador = 2;
+            }
+            else if(nome == 'Tin'){
+                nome = 'Tinowns'
+                fkJogador = 3;
+            }
+            else if(nome == 'Route'){
+                fkJogador = 4;
+            }
+            else if(nome == 'RedBert'){
+                fkJogador = 5;
+            }
+            
+            var idUsuario = sessionStorage.ID_USUARIO;
+
+            var corpo = {
+                fkJogador: fkJogador,
+                primeiraNota: Number(pergunta1),
+                segundaNota: Number(pergunta2),
+                terceiraNota: Number(pergunta3)
+            }
+
+            fetch(`/avaliacoes/avaliar/${idUsuario}`, {
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(corpo)
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    cartinhasSection.style.display = 'flex';
+                    window.location.href = "./cartinhas.html#cartinhas_section";
+                    carregarMedias(media, fkJogador, pergunta1, pergunta2, pergunta3);
+                    carregarJogadoresEscolhidos();
+                } else if (resposta.status == 404) {
+                    window.alert("Deu 404!");
+                } else {
+                    throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);  
+            });
+
+            cartinhasSection.innerHTML = `
+                        <div class="cartinha" id="cartinha">
+                            <label class="cartinha-titulo">${media}</label>
+                            <label class="cartinha-nome">${nome.toUpperCase()}</label>
+                        </div>
+                        <div style="width:70%">
+                            <div id="medias" style="display: flex;font-size: 20px;height: 10%;justify-content: space-around;background-color: #F5F5F5;color: #000;border-radius: 10px;padding: 20px 20px;">
+                                <label>Sua média: ${media}</label>
+                                <label>Média Geral: ${media}</label>
+                            </div>
+                            <div class="cartinha-grafico" style="margin-top: 40px;">
+                                <div>
+                                    <canvas id="graficoRadar" ></canvas>
+                                </div>
+                                <div>
+                                    <canvas id="graficoBarra" ></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        
+            `
+
+            var cartas = {
+                robo: ['./imgs/cartinhas-loud/robo-desafiante.png', './imgs/cartinhas-loud/robo-mestre.png', './imgs/cartinhas-loud/robo-platina.png', './imgs/cartinhas-loud/robo-prata.png', './imgs/cartinhas-loud/robo-ferro.png'],
+                croc: ['./imgs/cartinhas-loud/croc-desafiante.png', './imgs/cartinhas-loud/croc-mestre.png', './imgs/cartinhas-loud/croc-platina.png', './imgs/cartinhas-loud/croc-prata.png', './imgs/cartinhas-loud/croc-ferro.png'],
+                tin: ['./imgs/cartinhas-loud/tinowns-desafiante.png', './imgs/cartinhas-loud/tinowns-mestre.png', './imgs/cartinhas-loud/tinowns-platina.png', './imgs/cartinhas-loud/tinowns-prata.png', './imgs/cartinhas-loud/tinowns-ferro.png'],
+                route: ['./imgs/cartinhas-loud/route-desafiante.png', './imgs/cartinhas-loud/route-mestre.png', './imgs/cartinhas-loud/route-platina.png', './imgs/cartinhas-loud/route-prata.png', './imgs/cartinhas-loud/route-ferro.png'],
+                redBert: ['./imgs/cartinhas-loud/redBert-desafiante.png', './imgs/cartinhas-loud/redBert-mestre.png', './imgs/cartinhas-loud/redBert-platina.png', './imgs/cartinhas-loud/redBert-prata.png', './imgs/cartinhas-loud/redBert-ferro.png']
+            }
+
+            if(nome == 'Robo'){
+                if(media <= 59){
+                    cartinha.style.backgroundImage = `url('${cartas.robo[4]}')`;
+                }
+                else if(media <= 69){
+                    cartinha.style.backgroundImage = `url('${cartas.robo[3]}')`;
+                }
+                else if(media <= 79){
+                    cartinha.style.backgroundImage = `url('${cartas.robo[2]}')`;
+                }
+                else if(media <= 89){
+                    cartinha.style.backgroundImage = `url('${cartas.robo[1]}')`;
+                }
+                else if(media <= 100){
+                    cartinha.style.backgroundImage = `url('${cartas.robo[0]}')`;
+                }
+            }
+            else if(nome == 'Croc'){
+                if(media <= 59){
+                    cartinha.style.backgroundImage = `url('${cartas.croc[4]}')`;
+                }
+                else if(media <= 69){
+                    cartinha.style.backgroundImage = `url('${cartas.croc[3]}')`;
+                }
+                else if(media <= 79){
+                    cartinha.style.backgroundImage = `url('${cartas.croc[2]}')`;
+                }
+                else if(media <= 89){
+                    cartinha.style.backgroundImage = `url('${cartas.croc[1]}')`;
+                }
+                else if(media <= 100){
+                    cartinha.style.backgroundImage = `url('${cartas.croc[0]}')`;
+                }
+            }
+            else if(nome == 'Tinowns'){
+                if(media <= 59){
+                    cartinha.style.backgroundImage = `url('${cartas.tin[4]}')`;
+                }
+                else if(media <= 69){
+                    cartinha.style.backgroundImage = `url('${cartas.tin[3]}')`;
+                }
+                else if(media <= 79){
+                    cartinha.style.backgroundImage = `url('${cartas.tin[2]}')`;
+                }
+                else if(media <= 89){
+                    cartinha.style.backgroundImage = `url('${cartas.tin[1]}')`;
+                }
+                else if(media <= 100){
+                    cartinha.style.backgroundImage = `url('${cartas.tin[0]}')`;
+                }
+            }
+            else if(nome == 'Route'){
+                if(media <= 59){
+                    cartinha.style.backgroundImage = `url('${cartas.route[4]}')`;
+                }
+                else if(media <= 69){
+                    cartinha.style.backgroundImage = `url('${cartas.route[3]}')`;
+                }
+                else if(media <= 79){
+                    cartinha.style.backgroundImage = `url('${cartas.route[2]}')`;
+                }
+                else if(media <= 89){
+                    cartinha.style.backgroundImage = `url('${cartas.route[1]}')`;
+                }
+                else if(media <= 100){
+                    cartinha.style.backgroundImage = `url('${cartas.route[0]}')`;
+                }
+            }
+            else if(nome == 'RedBert'){
+                if(media <= 59){
+                    cartinha.style.backgroundImage = `url('${cartas.redBert[4]}')`;
+                }
+                else if(media <= 69){
+                    cartinha.style.backgroundImage = `url('${cartas.redBert[3]}')`;
+                }
+                else if(media <= 79){
+                    cartinha.style.backgroundImage = `url('${cartas.redBert[2]}')`;
+                }
+                else if(media <= 89){
+                    cartinha.style.backgroundImage = `url('${cartas.redBert[1]}')`;
+                }
+                else if(media <= 100){
+                    cartinha.style.backgroundImage = `url('${cartas.redBert[0]}')`;
+                }
+            }
+
+        }
+        
+    }
+
+    function carregarMedias(media, fkJogador, pergunta1, pergunta2, pergunta3){
+        var primeiraNotaGeral = 0;
+        var segundaNotaGeral = 0;
+        var terceiraNotaGeral = 0;
+        var mediaGeral = 0;
+        fetch(`/avaliacoes/listarNotas/${fkJogador}`).then(function (response) {
+            if (response.ok) {
+                response.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+                        sessionStorage.PRIMEIRANOTA = json[0].primeiraNota;
+                        sessionStorage.SEGUNDANOTA = json[0].segundaNota;
+                        sessionStorage.TERCEIRANOTA = json[0].terceiraNota;
+                        sessionStorage.MEDIAGERAL = json[0].mediaGeral;
+                        inserirMedia(media, mediaGeral)
+
+                        carregarGrafico(pergunta1, pergunta2, pergunta3, primeiraNotaGeral, segundaNotaGeral, terceiraNotaGeral)
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+        .catch(function (error) {
+            console.error(`Erro na obtenção dos dados: ${error.message}`);
+        });
+
+    }
+
+    function inserirMedia(media, mediaGeral){
+        mediaGeral = Number(sessionStorage.MEDIAGERAL)
+        medias.innerHTML = `<label>Sua média: ${media}</label>
+                            <label>Média Geral: ${mediaGeral}</label>`
+    }
+
+    function carregarGrafico(pergunta1, pergunta2, pergunta3, primeiraNotaGeral, segundaNotaGeral, terceiraNotaGeral){
+        primeiraNotaGeral = Number(sessionStorage.PRIMEIRANOTA)
+        segundaNotaGeral = Number(sessionStorage.SEGUNDANOTA)
+        terceiraNotaGeral = Number(sessionStorage.TERCEIRANOTA)
+        const radar = document.getElementById('graficoRadar');
+
+            new Chart
+            (
+                radar,
+                {
+                    type: 'radar',
+                    data:
+                    {
+                        labels: ['Primeira Nota','Segunda Nota','Terceira Nota'],
+                        datasets:
+                        [
+                            {
+                                label: 'Suas Notas',
+                                data: [pergunta1, pergunta2, pergunta3],
+                                fill: true,
+                                backgroundColor: 'rgba(0, 255, 60, 0.2)',
+                                borderColor: 'rgb(0, 255, 60)',
+                                pointBackgroundColor: 'rgb(0, 255, 60)',
+                                pointBorderColor: '#fff',
+                                pointHoverBackgroundColor: '#fff',
+                                pointHoverBorderColor: 'rgb(0, 255, 60)'
+                            },
+                            {
+                                label: 'Notas Geral',
+                                data: [primeiraNotaGeral, segundaNotaGeral, terceiraNotaGeral],
+                                fill: true,
+                                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                                borderColor: 'rgb(255, 99, 132)',
+                                pointBackgroundColor: 'rgb(255, 99, 132)',
+                                pointBorderColor: '#fff',
+                                pointHoverBackgroundColor: '#fff',
+                                pointHoverBorderColor: 'rgb(255, 99, 132)'
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Notas do Jogador',
+                                color: 'rgb(255,255,255)',
+                                font: {
+                                    size: 20,
+                                    family: 'Aldrich'
+                                }
+                            },
+                            legend: {
+                                display: true,
+                                labels: {
+                                    color: 'rgb(255, 255, 255)',
+                                    font: {
+                                        size: 14,
+                                        family: 'Aldrich'
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            r: {
+                                angleLines: {
+                                    display: false
+                                },
+                                suggestedMin: 0,
+                                suggestedMax: 100,
+                                pointLabels: {
+                                    color: '#ffffff',
+                                    font: {
+                                        size: 12,
+                                        family: 'Aldrich'
+                                    }
+                                },
+                                grid: {
+                                    color: 'rgba(255, 255, 255, 0.2)'
+                                },
+                                ticks: {
+                                    display: false
+                                }
+                            }
+                        }
+                    }
+                }
+            );
+    }
+
+    function carregarJogadoresEscolhidos(){
+        fetch("/avaliacoes/listarJogadoresEscolhidos").then(function (resposta) {
+            if (resposta.ok) {
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    for (let i = 0; i < resposta.length; i++) {
+                        var escolha = resposta[i];
+                        if(escolha.nome == 'Robo'){
+                            sessionStorage.ROBO = escolha.quantidadeEscolhidos;
+                        }
+                        else if(escolha.nome == 'Croc'){
+                            sessionStorage.CROC = escolha.quantidadeEscolhidos;
+                        }
+                        else if(escolha.nome == 'Tinowns'){
+                            sessionStorage.TIN = escolha.quantidadeEscolhidos;
+                        }
+                        else if(escolha.nome == 'Route'){
+                            sessionStorage.ROUTE = escolha.quantidadeEscolhidos;
+                        }
+                        else if(escolha.nome == 'RedBert'){
+                            sessionStorage.REDBERT = escolha.quantidadeEscolhidos;
+                        }
+                    }
+
+                    carregarGraficoBarra()
+
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+        }); 
+    }
+
+    function carregarGraficoBarra(){
+        const barra = document.getElementById('graficoBarra');
+        var roboQtdEscolha = sessionStorage.ROBO;
+        var crocQtdEscolha = sessionStorage.CROC;
+        var tinQtdEscolha = sessionStorage.TIN;
+        var routeQtdEscolha = sessionStorage.ROUTE;
+        var redBertQtdEscolha = sessionStorage.REDBERT;
+
+        new Chart
+        (
+            barra,
+            {
+                type: 'bar',
+                data:
+                {
+                    labels: ['Robo','Croc','Tinowns','Route','RedBert'],
+                    datasets:
+                    [
+                        {
+                            label: 'Umidade Média',
+                            data: [roboQtdEscolha, crocQtdEscolha, tinQtdEscolha, routeQtdEscolha, redBertQtdEscolha],
+                            backgroundColor: 'rgba(0, 255, 60, 0.5)',
+                            borderColor: 'rgb(0, 255, 60)',
+                            borderWidth: 2
+                        }
+                    ]
+                },
+                options: 
+                {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Jogadores mais escolhidos',
+                            color: 'rgb(255,255,255)',
+                            font: {
+                                size: 16,
+                                family: 'Aldrich'
+                            }
+                        },
+                        legend: {
+                            display: true,
+                            labels: {
+                                color: 'rgb(255, 255, 255)',
+                                font: {
+                                    size: 14,
+                                    family: 'Aldrich'
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: {
+                                color: 'rgb(255, 255, 255)',
+                                font: {
+                                    size: 12,
+                                    family: 'Aldrich'
+                                }
+                            }
+                        },
+                        y: {
+                            ticks: {
+                                color: 'rgb(255, 255, 255)',
+                                font: {
+                                    size: 12,
+                                    family: 'Aldrich'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        );
+    }
+</script>
+
+<script>
+    AOS.init();
+</script>

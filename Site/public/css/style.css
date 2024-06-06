@@ -96,71 +96,77 @@ header{
     transition-duration: 0.5s;
 }
 
-    .buttonPerfil{
-        width: 66px;
-        height: 66px;
-        background-color: var(--black);
-        border-radius: 50%;
-        border: solid 4px var(--green-loud);
-        cursor: pointer;
-    }
+.buttonPerfil{
+    width: 66px;
+    height: 66px;
+    background-color: var(--black);
+    border-radius: 50%;
+    border: solid 4px var(--green-loud);
+    cursor: pointer;
+}
 
-    .perfil img{
-        width: 30px;
-        height: 30px;
-    }
+.perfil img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
 
-    .menu{
-        width: 174px;
-        height: 218px;
-        position: fixed;
-        top: 30px;
-        right: 30px;
-        color: var(--white);
-        background-color: var(--black);
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: space-around;
-        border: solid 5px var(--green-loud);
-        padding: 10px;
-    }
-    .menu img{
-        width: 30px;
-        height: 30px;
-    }
+.menu{
+    width: 174px;
+    height: 218px;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    color: var(--white);
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    border: solid 5px var(--green-loud);
+    padding: 10px;
+}
+.menu img{
+    width: 30px;
+    height: 30px;
+}
 
-    .menu a{
-        color: var(--white);
-        text-decoration: none;
-    }
+.menu a{
+    color: var(--white);
+    text-decoration: none;
+}
 
-    .menu p{
-        text-decoration: underline;
-    }
+.menu p{
+    text-decoration: underline;
+}
 
-    .buttonUsuario{
-        width: 100%;
-        height: 50px;
-        background-color: var(--black);
-        border: none;
-        cursor: pointer;
-    }
+.buttonUsuario{
+    width: 100%;
+    height: 50px;
+    background-color: var(--black);
+    border: none;
+    cursor: pointer;
+}
 
-    .buttonSair{
-        background-color: transparent;
-        color: white;
-        width: 100%;
-        border: none;
-        font-size: 16px;
-    }
+.buttonUsuario img{
+    width: 60px;
+    height: 60px;
+}
+
+.buttonSair{
+    background-color: transparent;
+    color: white;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+}
 
 /* --------------------------HOME-------------------------- */
 .home-background{
     display: flex;
     justify-content: center;
     /* align-items: center; */
-    background-image: linear-gradient(to bottom, rgba(251, 224, 192, 0.1), rgba(0, 0, 0, 0.8)), url('./imgs/equipe-loud.png');
+    background-image: linear-gradient(to bottom, rgba(251, 224, 192, 0.1), rgba(0, 0, 0, 0.8)), url('../imgs/equipe-loud.png');
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -279,35 +285,35 @@ header{
 }
 
 .robo{
-    background-image: url(./imgs/Robo.png);
+    background-image: url(../imgs/Robo.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .tin{
-    background-image: url(./imgs/Tinowns.png);
+    background-image: url(../imgs/Tinowns.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .croc{
-    background-image: url(./imgs/Croc.png);
+    background-image: url(../imgs/Croc.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .route{
-    background-image: url(./imgs/Route.png);
+    background-image: url(../imgs/Route.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .redbert{
-    background-image: url(./imgs/redbert.png);
+    background-image: url(../imgs/redbert.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

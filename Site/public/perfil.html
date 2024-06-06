@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/perfil.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./imgs/icon.png" type="image/x-icon">
+    <title>League of Loud | Perfil</title>
+</head>
+<body onload="validarSessao()">
+    <header>    
+        <nav class="nav-bar">
+            <a href="./index.html"><img src="./imgs/logotipo.png" alt="LOUD"></a>
+        </nav>
+    </header>
+    <main>
+        <div class="notificacao" id="notificacao">
+            <img src="./imgs/troca.png" alt="">
+            <p>Foto atualizada com sucesso!!</p>
+        </div>
+        <section class="container-principal">
+            <div class="container-menu">
+                <div>
+                    <img src="./imgs/user icon.png" alt="" id="fotoPerfil">
+                    <p id="nomeUsuario">Nome de Usuario</p>
+                </div>
+                <ul>
+                    <li><a href="./cartinhas.html">Cartinhas</a></li>
+                    <li><a href="./index.html">Voltar</a></li>
+                    <li><a onclick="limparSessao()" class="sair">Sair</a></li>
+                </ul>
+            </div>
+            <div class="container-dados">
+                <div class="dados-foto">
+                    <p>Foto de Perfil</p>
+                    <div>
+                        <button class="button_foto" id="jax" onclick="trocarFoto(1)"></button>
+                        <button class="button_foto" id="renek" onclick="trocarFoto(2)"></button>
+                        <button class="button_foto" id="gnar" onclick="trocarFoto(3)"></button>
+                        <button class="button_foto" id="azir" onclick="trocarFoto(4)" ></button>
+                        <button class="button_foto" id="taliyah" onclick="trocarFoto(5)" ></button>
+                        <button class="button_foto" id="leBranc" onclick="trocarFoto(6)" ></button>
+                        <button class="button_foto" id="leeSin" onclick="trocarFoto(7)" ></button>
+                        <button class="button_foto" id="sejuani" onclick="trocarFoto(8)" ></button>
+                        <button class="button_foto" id="poppy" onclick="trocarFoto(9)" ></button>
+                        <button class="button_foto" id="kaisa" onclick="trocarFoto(10)" ></button>
+                        <button class="button_foto" id="lucian" onclick="trocarFoto(11)" ></button>
+                        <button class="button_foto" id="aphelios" onclick="trocarFoto(12)" ></button>
+                        <button class="button_foto" id="nami" onclick="trocarFoto(13)" ></button>
+                        <button class="button_foto" id="bardo" onclick="trocarFoto(14)" ></button>
+                        <button class="button_foto" id="braum" onclick="trocarFoto(15)" ></button>
+                    </div>
+                </div>
+                <div class="dados-pessoais">
+                    <p>Dados Pessoais</p>
+                    <div>
+                        <img src="./imgs/user icon.png" alt="">
+                        <section>
+                            <input type="text" id="input_nome" onkeyup="atualizacaoDados()">
+                            <label>Nome completo</label>
+                        </section> 
+                    </div>
+                    <div>
+                        <img src="./imgs/email icon.png" alt="">
+                        <section>
+                            <input type="text" id="input_email" onkeyup="atualizacaoDados()">
+                            <label>E-mail</label>
+                        </section>  
+                        <button id="button_atualizar" class="button_disabled" disabled onclick="atualizarDados()">Atualizar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+
+<script>
+    function trocarFoto(numFoto){
+        if(numFoto == 1)
+        {
+            var fotoUsuario = "https://pbs.twimg.com/media/F6_AQypWIAAVTzW?format=jpg&name=large";   
+        }
+        else if(numFoto == 2)
+        {
+            var fotoUsuario = "https://pbs.twimg.com/media/F3mPmcrW0AArk1a.png";
+        }
+        else if(numFoto == 3)
+        {
+            var fotoUsuario = "https://preview.redd.it/gnar-icon-oh-my-god-its-perfect-v0-3pt88w3v5dib1.jpg?auto=webp&s=4094c8f13131e54a083ec752a8a9804dc9b7dec7";
+        }
+        else if(numFoto == 4)
+        {
+            var fotoUsuario = "https://preview.redd.it/new-azir-icon-v0-tz9hb3rcsbib1.jpg?auto=webp&s=86e1789f2819c89c8f0ca2ca0d6e57a2fc265002";
+        }
+        else if(numFoto == 5)
+        {
+            var fotoUsuario = "https://pbs.twimg.com/media/F3mL_ILWsAAA8TX.jpg";
+        }
+        else if(numFoto == 6)
+        {
+            var fotoUsuario = "https://preview.redd.it/new-leblanc-icon-on-pbe-v0-liodh8n88cib1.png?auto=webp&s=c2023f24556b00be0f88e2760b7ad437770bd78c";
+        }
+        else if(numFoto == 7)
+        {
+            var fotoUsuario = "https://pbs.twimg.com/media/GLT_79BXYAAqs8j.png";
+        }
+        else if(numFoto == 8)
+        {
+            var fotoUsuario = "https://pbs.twimg.com/media/F3mCl-xWIAAlK03.jpg";
+        }
+        else if(numFoto == 9)
+        {
+            var fotoUsuario = "https://i.redd.it/s627qv1hsbib1.jpg";
+        }
+        else if(numFoto == 10)
+        {
+            var fotoUsuario = "https://preview.redd.it/new-kaisa-icon-v0-prffe4xmubib1.png?auto=webp&s=3746c38683ad96a7e869cc2baee4256c2814b912";
+        }
+        else if(numFoto == 11)
+        {
+            var fotoUsuario = "https://i.redd.it/runeterra-illustration-icons-v0-5vcgchbg6dib1.jpg?width=300&format=pjpg&auto=webp&s=9654aab9c656e2abee9409c041d487cd9fc76e5a";
+        }
+        else if(numFoto == 12)
+        {
+            var fotoUsuario = "https://pbs.twimg.com/media/F4ztZgyWcAAbcuO.jpg";
+        }
+        else if(numFoto == 13)
+        {
+            var fotoUsuario = "https://preview.redd.it/can-someone-confirm-am-i-looking-at-a-new-nami-icon-v0-mq1stwg7ubib1.jpg?auto=webp&s=c1bc34a94c6d9b3d4f7d9657a565a1963c62a424";
+        }
+        else if(numFoto == 14)
+        {
+            var fotoUsuario = "https://i.redd.it/8ku1x4g7ccib1.jpg";
+        }
+        else if(numFoto == 15)
+        {
+            var fotoUsuario = "https://pbs.twimg.com/media/F3mE24uWAAA3XQN.jpg";
+        }
+
+        fetch(`/usuarios/atualizarFoto/${sessionStorage.ID_USUARIO}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                foto: fotoUsuario
+            })
+        }).then(function (resposta) {
+            if (resposta.ok) {  
+                fotoPerfil.src = fotoUsuario;
+                sessionStorage.FOTO = fotoUsuario;
+                mostrarNotificacao();
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+    }
+
+    function validarSessao(){
+        var nome = sessionStorage.NOME_USUARIO;
+        var foto = sessionStorage.FOTO;
+        var email = sessionStorage.EMAIL_USUARIO;
+
+        if (foto != null && nome != null) {
+            fotoPerfil.src = foto;
+            nomeUsuario.innerHTML = nome;
+            input_nome.value = nome;
+            input_email.value = email;
+        }
+        else
+        {
+            window.location = "index.html";
+        }
+    }
+
+    function limparSessao() {
+        sessionStorage.clear();
+        window.location = "index.html";
+    }
+    
+    function atualizacaoDados() {
+        var nome = document.getElementById('input_nome').value;
+        var email = document.getElementById('input_email').value;
+        var nomeOriginal = sessionStorage.NOME_USUARIO;
+        var emailOriginal = sessionStorage.EMAIL_USUARIO;
+        var button = document.getElementById('button_atualizar');
+
+        if (nome !== nomeOriginal || email !== emailOriginal) {
+            button.classList.remove('button_disabled');
+            button.classList.add('button_update');
+            button.removeAttribute('disabled');
+        } else {
+            button.classList.remove('button_update');
+            button.classList.add('button_disabled');
+            button.setAttribute('disabled', true);
+        }
+    }
+
+    function mostrarNotificacao() {
+        const notificacao = document.getElementById("notificacao");
+        notificacao.innerHTML = `<img src="./imgs/troca.png" alt="">
+            <p>Foto atualizada com sucesso!!</p>`
+        notificacao.classList.add("show");
+        setTimeout(() => {
+            notificacao.classList.remove("show");
+        }, 2000);
+    }
+
+    function atualizarDados(){
+        var nomeInput = document.getElementById('input_nome').value;
+        var emailInput = document.getElementById('input_email').value;
+
+        fetch(`/usuarios/atualizarDados/${sessionStorage.ID_USUARIO}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nome: nomeInput,
+                email: emailInput,
+            })
+        }).then(function (resposta) {
+            if (resposta.ok) {
+                sessionStorage.NOME_USUARIO = nomeInput;
+                sessionStorage.EMAIL_USUARIO = emailInput;
+                mostrarNotificacaoDados();
+                validarSessao();
+                atualizacaoDados();
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+    }
+
+    function mostrarNotificacaoDados() {
+        const notificacao = document.getElementById("notificacao");
+        notificacao.innerHTML = `<img src="./imgs/troca.png" alt="">
+            <p>Dados atualizados com sucesso!!</p>`
+        notificacao.classList.add("show");
+        setTimeout(() => {
+            notificacao.classList.remove("show");
+        }, 2000);
+    }
+
+</script>

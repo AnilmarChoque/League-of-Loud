@@ -64,7 +64,7 @@ main{
 .fundo-loud{
     width: 50%;
     height: 100%;
-    background-image: url(./imgs/Logo.png);
+    background-image: url(../imgs/Logo.png);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 50%;
@@ -104,7 +104,7 @@ main{
     border-right: none;
     outline: none;
     background-color: transparent;
-    font-size: 12px;
+    font-size: 14px;
     transition: all .1s linear;
     color: var(--white);
     text-shadow: 
@@ -166,7 +166,7 @@ main{
 .fundo-lol{
     width: 50%;
     height: 100%;
-    background-image: url(./imgs/LoL-Symbol\ 1.png);
+    background-image: url(../imgs/LoL-Symbol\ 1.png);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 80%;
@@ -231,7 +231,7 @@ main{
 
 .login-inputs{
     background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(15px);
     width: 100%;
     height: 100%;
     border-radius: 50px;
@@ -331,4 +331,33 @@ main{
     border-bottom-left-radius: 0px;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
+}
+
+.alerta-falha{
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    bottom: 40%;
+    right: 40%;
+    background-color: var(--white);
+    color: var(--black);
+    width: 300px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.alerta-falha button{
+    cursor: pointer;
+    width: 50px;
+    height: 25px;
+    border: solid 2px var(--green-loud);
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: 10px;
+}
+
+.borrado {
+    filter: blur(20px); 
 }

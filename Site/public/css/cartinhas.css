@@ -110,8 +110,8 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     z-index: 1;
+    flex-direction: column;
 }
 
 /* ----------------------------------CARTINHAS---------------------------- */
@@ -121,7 +121,7 @@ main{
     align-items: center;
     background-color: var(--white);
     width: 80%;
-    height: 80%;
+    height: 80vh;
     border-radius: 20px;
 }
 
@@ -159,6 +159,7 @@ main{
     border-radius: 10px;
     color: var(--white);
     margin: 10px 0;
+    width: 80%;
 }
 
 .partida, .partida label, .partida img{
@@ -200,7 +201,7 @@ main{
 }
 
 .partida-escolhida{
-    background-color: var(--black);
+    background-color: #0000004a;
 }
 
 /* ----------------------------------INFORMAÇÕES---------------------------- */
@@ -211,7 +212,7 @@ main{
     justify-content: center;
     align-items: center;
     width: 68%;
-    height: 80%;    
+    height: 80%;
 }
 
 .carrossel-main{
@@ -220,7 +221,7 @@ main{
     height: 100%;
 }
 
-.carousel {
+.carrossel {
     display: flex;
     width: 100%;
     overflow: hidden;
@@ -228,20 +229,20 @@ main{
     height: 100%;
 }
 
-.carousel-container {
+.carrossel-container {
     display: flex;
     width: 600px;
     transition: transform 0.5s ease;
 }
 
-.carousel-item {
+.carrossel-item {
     color: var(--black);
     min-width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-.prev, .next {
+.anterior, .proximo {
     width: 44px;
     height: 44px;
     border-radius: 50%;
@@ -257,17 +258,17 @@ main{
     justify-content: center;
 }
 
-.prev img, .next img{
+.anterior img, .proximo img{
     width: 40px;
 }
 
-.carousel-dots {
+.carrossel-bolinhas {
     display: flex;
     width: 150px;
     justify-content: space-between;
 }
 
-.carousel-dots .dot {
+.carrossel-bolinhas .bolinha {
     width: 20px;
     height: 20px;
     background-color: #bbb;
@@ -275,7 +276,7 @@ main{
     cursor: pointer;
 }
 
-.carousel-dots .dot.active {
+.carrossel-bolinhas .bolinha.ativado {
     background-color: #717171;
 }
 
@@ -349,4 +350,64 @@ main{
     background-color: #FFFFFF;
     color: var(--black);
     transition: all 0.5s;
+}
+
+.cartinhas-section{
+    margin-top: 50px;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cartinha{
+    height: 70%;
+    width: 20%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cartinha label{
+    font-size: 30px;
+    text-shadow: 
+    -2px -2px 0 #000,  
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;
+}
+
+.cartinha-titulo{
+    margin-top: 50px;
+    width: 80%;
+}
+
+.cartinha-nome{
+    margin-bottom: 100px;
+}
+
+.cartinha-grafico{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cartinha-grafico div{
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartinha-grafico canvas {
+    width: 85% !important;
+    height: 100% !important;
 }

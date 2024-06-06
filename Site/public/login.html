@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./imgs/icon.png" type="image/x-icon">
+    <title>League of Loud | Login</title>
+</head>
+<body>
+    <header>    
+        <nav class="nav-bar">
+            <a href="./index.html"><img src="./imgs/logotipo.png" alt="LOUD"></a>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="cadastre-se">
+            <div class="fundo-loud">
+                <div class="cadastro-texto" id="cadastro-texto">
+                    <h1>Olá Amigo,<br>Seja bem-vindo</h1>
+                    <p>Caso queira conectar-se em uma conta já existente clique no botão abaixo</p>
+                    <button id="buttonEntrarDeslize" onclick="deslize()"><img src="./imgs/seta preta reversa.png" alt=">">Entrar</button>
+                </div>
+                
+                <div class="login-texto" id="login-texto">
+                    <h1>Olá Amigo,<br>Seja bem-vindo</h1>
+                    <p>Caso queira cadastrar-se como um novo usuário clique no botão abaixo</p>
+                    <button id="buttonCadastrarDeslize" onclick="deslize()">Realizar Cadastro<img src="./imgs/seta preta.png" alt=">"></button>
+                </div>  
+            </div>
+            
+            <div class="fundo-lol">
+                <div class="cadastro-inputs" id="cadastro-inputs">
+                    <h1>Crie sua Conta</h1>
+                    <div class="inputs-padrao">
+                        <img src="./imgs/user icon.png" alt=""><input type="text" id="input_nome" placeholder=" "><label>Nome Completo</label>
+                    </div>
+                    <div class="inputs-padrao">
+                        <img src="./imgs/email icon.png" alt=""><input type="text" id="input_email" placeholder=" " autocomplete="off"><label>E-mail</label>
+                    </div>
+                    <div class="inputs-padrao">
+                        <img src="./imgs/Senha icon.png" alt=""><input type="password" id="input_senha" placeholder=" " onpaste="return false" ondrop="return false"><label>Senha</label>
+                    </div>
+                    <div class="inputs-padrao">
+                        <img src="./imgs/Confirmar icon.png" alt=""><input type="password" id="input_confirmarSenha" placeholder=" " onpaste="return false" ondrop="return false"><label>Confirmar Senha</label>
+                    </div>
+                    <div class="botao-padrao">
+                        <button id="buttonCadastrar" onclick="cadastrar()">CADASTRE-SE</button>
+                    </div>
+                </div>
+                <div class="login-inputs" id="login-inputs">
+                    <h1>Conecte-se a sua conta</h1>
+                    <div class="inputs-padrao">
+                        <img src="./imgs/email icon.png" alt=""><input id="email_input_login" type="text" placeholder=" " autocomplete="off"><label>E-mail</label>
+                    </div>
+                    <div class="inputs-padrao">
+                        <img src="./imgs/Senha icon.png" alt=""><input id="senha_input_login" type="password" placeholder=" " onpaste="return false" ondrop="return false"><label>Senha</label>
+                    </div>
+                    <div class="botao-padrao">
+                        <button id="buttonEntrar" onclick="entrar()">ENTRAR</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section class="alerta-falha" id="alerta-falha">
+    </section>
+</body>
+</html>
+
+<script>
+    let contador = 1;
+    function deslize() {
+        var loginTexto = document.getElementById('login-texto');
+        var loginInputs = document.getElementById('login-inputs');
+        var cadastroTexto = document.getElementById('cadastro-texto');
+        var cadastroInputs = document.getElementById('cadastro-inputs');
+
+        loginTexto.classList.toggle('slide-right');
+        loginInputs.classList.toggle('slide-left');
+        
+        setTimeout(() => {   
+            
+            
+            if(contador == 0){
+                loginInputs.style.display = 'flex'
+                loginTexto.style.display = 'flex'
+                cadastroTexto.style.display = 'none'
+                cadastroInputs.style.display = 'none'
+                document.title = 'League of Loud | Login'
+                contador = 1;
+            }
+            else
+            {
+                loginInputs.style.display = 'none'
+                loginTexto.style.display = 'none'
+                cadastroTexto.style.display = 'flex'
+                cadastroInputs.style.display = 'flex'
+                document.title = 'League of Loud | Cadastro'
+                contador = 0
+            }
+
+                        
+        }, "300");
+
+        cadastroTexto.classList.toggle('slide-right-cadastro');
+        cadastroInputs.classList.toggle('slide-left-cadastro');
+    }
+
+    function entrar() {
+        var emailVar = email_input_login.value;
+        var senhaVar = senha_input_login.value;
+        var alertaFalha = document.getElementById('alerta-falha');
+        var main = document.getElementById('main');
+        
+        if (emailVar == "" || senhaVar == "") 
+        {
+            alertaFalha.innerHTML +=`<p> Os seguintes campos estão vazios:`
+            if(emailVar == ""){
+                alertaFalha.innerHTML += `<br>E-mail`  
+            }
+
+            if(senhaVar == ""){
+                alertaFalha.innerHTML += `<br>Senha`
+            }
+            alertaFalha.innerHTML += `</p><br>
+            <button onclick="tirarErro()">OK</button>`
+            alertaFalha.style.display = 'flex'
+            main.classList.toggle('borrado');
+            document.getElementById('buttonEntrar').disabled = true;
+            document.getElementById('buttonCadastrarDeslize').disabled = true;
+        }
+        else 
+        {
+            console.log("FORM LOGIN: ", emailVar);
+            console.log("FORM SENHA: ", senhaVar);
+
+            fetch("/usuarios/autenticar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    emailServer: emailVar,
+                    senhaServer: senhaVar
+                })
+            }).then(function (resposta) {
+                console.log("ESTOU NO THEN DO entrar()!")
+
+                if (resposta.ok) {
+                    console.log(resposta);
+
+                    resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+                        sessionStorage.EMAIL_USUARIO = json.email;
+                        sessionStorage.NOME_USUARIO = json.nome;
+                        sessionStorage.ID_USUARIO = json.idUsuario;
+                        sessionStorage.FOTO = json.foto;
+
+                        alertaFalha.innerHTML = `<p>Login realizado com sucesso!!</p>`
+                        alertaFalha.style.display = 'flex'
+                        main.classList.toggle('borrado');
+                        document.getElementById('buttonCadastrar').disabled = true;
+                        document.getElementById('buttonEntrarDeslize').disabled = true;  
+
+
+                        setTimeout(function () {
+                            window.location = "./index.html";
+                        }, 1000);
+
+                    });
+
+                } else {
+                    alertaFalha.innerHTML = `<p>Dados incorretos, tente novamente!!</p>`
+                    alertaFalha.style.display = 'flex'
+                    main.classList.toggle('borrado');
+
+                    console.log("Houve um erro ao tentar realizar o login!");
+
+                    resposta.text().then(texto => {
+                        console.error(texto);
+                    });
+                    setTimeout(function () {
+                        tirarErro();
+                    }, 2000);
+                }
+
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+
+            return false;   
+        }
+    }
+
+    function cadastrar() {
+        var nomeVar = input_nome.value;
+        var emailVar = input_email.value;
+        var senhaVar = input_senha.value;
+        var confirmacaoSenhaVar = input_confirmarSenha.value;
+        var alertaFalha = document.getElementById('alerta-falha');
+        var main = document.getElementById('main');
+        var usuarioEmail = emailVar.substring(0, emailVar.indexOf("@"));
+        var dominioEmail = emailVar.substring(emailVar.indexOf("@")+ 1, emailVar.length);
+
+        if ( nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") 
+        {
+            alertaFalha.innerHTML +=`<p> Os seguintes campos estão vazios:`
+            if(nomeVar == ""){
+                alertaFalha.innerHTML += `<br>Nome Completo`  
+            }
+
+            if(emailVar == ""){
+                alertaFalha.innerHTML += `<br>E-mail`
+            }
+
+            if(senhaVar == ""){
+                alertaFalha.innerHTML += `<br>Senha`
+            }
+
+            if(confirmacaoSenhaVar == ""){
+                alertaFalha.innerHTML += `<br>Confirmar Senha`
+            }
+
+            alertaFalha.innerHTML += `</p><br>
+            <button onclick="tirarErro()">OK</button>`
+            alertaFalha.style.display = 'flex'
+            main.classList.toggle('borrado');
+            document.getElementById('buttonCadastrar').disabled = true;
+            document.getElementById('buttonEntrarDeslize').disabled = true;
+
+        } else {
+            if(nomeVar.length < 5)
+            {
+                alertaFalha.innerHTML = `<p>O nome deve ter mais de 4 caracteres</p><br>
+                <button onclick="tirarErro()">OK</button>`
+                alertaFalha.style.display = 'flex'
+                main.classList.toggle('borrado');
+                document.getElementById('buttonCadastrar').disabled = true;
+                document.getElementById('buttonEntrarDeslize').disabled = true;
+            }
+            else if(usuarioEmail.length < 1 || dominioEmail.length < 3)
+            {
+                alertaFalha.innerHTML = `<p>O E-mail está inválido</p><br>
+                <button onclick="tirarErro()">OK</button>`
+                alertaFalha.style.display = 'flex'
+                main.classList.toggle('borrado');
+                document.getElementById('buttonCadastrar').disabled = true;
+                document.getElementById('buttonEntrarDeslize').disabled = true;
+            }
+            else if(usuarioEmail.search("@") !=-1 || dominioEmail.search("@")!=-1){
+                alertaFalha.innerHTML = `<p>O E-mail não pode ter mais de um "@"</p><br>
+                <button onclick="tirarErro()">OK</button>`
+                alertaFalha.style.display = 'flex'
+                main.classList.toggle('borrado');
+                document.getElementById('buttonCadastrar').disabled = true;
+                document.getElementById('buttonEntrarDeslize').disabled = true;
+            }
+            else if (usuarioEmail.search(" ") != -1 || dominioEmail.search(" ") !=-1 ){
+                alertaFalha.innerHTML = `<p>O E-mail não pode ter espaço</p><br>
+                <button onclick="tirarErro()">OK</button>`
+                alertaFalha.style.display = 'flex'
+                main.classList.toggle('borrado');
+                document.getElementById('buttonCadastrar').disabled = true;
+                document.getElementById('buttonEntrarDeslize').disabled = true;
+            }
+            else if (dominioEmail.indexOf(".") == -1){
+                alertaFalha.innerHTML = `<p>O E-mail está inválido</p><br>
+                <button onclick="tirarErro()">OK</button>`
+                alertaFalha.style.display = 'flex'
+                main.classList.toggle('borrado');
+                document.getElementById('buttonCadastrar').disabled = true;
+                document.getElementById('buttonEntrarDeslize').disabled = true;
+            }
+            else if(dominioEmail.lastIndexOf(".") == dominioEmail.length - 1){
+                alertaFalha.innerHTML = `<p>O E-mail não pode finalizar com um "."</p><br>
+                <button onclick="tirarErro()">OK</button>`
+                alertaFalha.style.display = 'flex'
+                main.classList.toggle('borrado');
+                document.getElementById('buttonCadastrar').disabled = true;
+                document.getElementById('buttonEntrarDeslize').disabled = true;
+            }
+            else if(senhaVar.length <= 8){
+                alertaFalha.innerHTML = `<p>A Senha deve ter mais de 8 letras</p><br>
+                <button onclick="tirarErro()">OK</button>`
+                alertaFalha.style.display = 'flex'
+                main.classList.toggle('borrado');
+                document.getElementById('buttonCadastrar').disabled = true;
+                document.getElementById('buttonEntrarDeslize').disabled = true;    
+            }
+            else if(senhaVar != confirmacaoSenhaVar){
+                alertaFalha.innerHTML = `<p>As senhas estão diferentes</p><br>
+                <button onclick="tirarErro()">OK</button>`
+                alertaFalha.style.display = 'flex'
+                main.classList.toggle('borrado');
+                document.getElementById('buttonCadastrar').disabled = true;
+                document.getElementById('buttonEntrarDeslize').disabled = true;   
+            }
+            else
+            {
+                // Enviando o valor da nova input
+                fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    nomeServer: nomeVar,
+                    emailServer: emailVar,
+                    senhaServer: senhaVar,
+                }),
+                })
+                .then(function (resposta) {
+                    console.log("resposta: ", resposta);
+
+                    if (resposta.ok) {
+                        alertaFalha.innerHTML = `<p>Cadastro realizado com sucesso redirecionado para área de login</p>`
+                        alertaFalha.style.display = 'flex'
+                        main.classList.toggle('borrado');
+                        document.getElementById('buttonCadastrar').disabled = true;
+                        document.getElementById('buttonEntrarDeslize').disabled = true;  
+
+                        setTimeout(() => {
+                            tirarErro()
+                            deslize();
+                        }, "2000");
+
+                    } else {
+                        throw "Houve um erro ao tentar realizar o cadastro!";
+                    }
+                })
+                .catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+                });
+
+                return false;
+            }
+        }
+    }
+
+    function tirarErro(){
+        var alertaFalha = document.getElementById('alerta-falha');
+        var main = document.getElementById('main');
+
+        alertaFalha.style.display = 'none'
+        main.classList.toggle('borrado');
+
+        alertaFalha.innerHTML = ``
+        document.getElementById('buttonCadastrar').disabled = false;
+        document.getElementById('buttonEntrarDeslize').disabled = false;
+        document.getElementById('buttonEntrar').disabled = false;
+        document.getElementById('buttonCadastrarDeslize').disabled = false;
+    }
+
+</script>
